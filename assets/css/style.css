@@ -318,6 +318,7 @@ h1, h2, h3 {
   position: relative;
   overflow: hidden;
   border-radius: 4px;
+  max-height: 500px;
 }
 
 .carousel-track {
@@ -332,7 +333,7 @@ h1, h2, h3 {
 
 .carousel-slide img {
   width: 100%;
-  aspect-ratio: 5 / 4;
+  height: 500px;
   object-fit: cover;
 }
 
