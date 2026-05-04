@@ -308,109 +308,43 @@ h1, h2, h3 {
 }
 
 /* ============================================
-   Gallery / Carousel
+   Gallery Band (auto-scrolling strip)
    ============================================ */
-.gallery {
-  text-align: center;
-}
-
-.carousel {
-  position: relative;
+.gallery-band {
   overflow: hidden;
-  border-radius: 4px;
-  max-height: 500px;
+  background-color: #3b2314;
+  padding: 0;
 }
 
-.carousel-track {
+.gallery-scroll {
+  overflow: hidden;
+}
+
+.gallery-scroll-inner {
   display: flex;
-  transition: transform 0.4s ease;
+  width: max-content;
+  animation: gallery-scroll 30s linear infinite;
 }
 
-.carousel-slide {
-  min-width: 100%;
+.gallery-scroll-inner img {
+  height: 220px;
+  width: auto;
+  max-width: none;
   flex-shrink: 0;
-}
-
-.carousel-slide img {
-  width: 100%;
-  height: 500px;
   object-fit: cover;
 }
 
-.carousel-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(59, 35, 20, 0.6);
-  color: #fff;
-  border: none;
-  width: 48px;
-  height: 48px;
-  font-size: 1.1rem;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  transition: background-color 0.3s;
-  z-index: 2;
+.gallery-scroll:hover .gallery-scroll-inner {
+  animation-play-state: paused;
 }
 
-.carousel-btn:hover {
-  background-color: rgba(59, 35, 20, 0.85);
-}
-
-.carousel-btn-prev {
-  left: 16px;
-}
-
-.carousel-btn-next {
-  right: 16px;
-}
-
-.carousel-dots {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  padding: 18px 0 4px;
-}
-
-.carousel-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: #ccc;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.carousel-dot.active {
-  background-color: #5f9764;
-}
-
-/* ============================================
-   Club (CTA)
-   ============================================ */
-.club {
-  background-color: #5f9764;
-  text-align: center;
-  padding: 60px 0;
-}
-
-.club .section-heading {
-  color: #fff;
-  margin-bottom: 24px;
-}
-
-.club .btn-primary {
-  background-color: #3b2314;
-  border-color: #3b2314;
-}
-
-.club .btn-primary:hover {
-  background-color: #2a1a0e;
-  border-color: #2a1a0e;
+@keyframes gallery-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 /* ============================================
